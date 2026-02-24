@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sweet Memories - Stress-Free Family Digital Memory Book</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6ee619",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Navigation -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+                <div class="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+                    <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+                        <span class="material-symbols-outlined font-bold">auto_awesome</span>
+                    </div>
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Sweet Memories</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-8 items-center">
+                    <nav class="hidden md:flex items-center gap-9">
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Features</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Pricing</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">About</a>
+                    </nav>
+                    <button
+                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-background-dark text-sm font-bold transition-transform hover:scale-105 active:scale-95">
+                        <span class="truncate">Login</span>
+                    </button>
+                </div>
+            </header>
+            <main class="flex flex-col">
+                <!-- Hero Section -->
+                <div class="px-6 md:px-20 py-12 md:py-24">
+                    <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="flex flex-col gap-8">
+                            <div class="flex flex-col gap-4">
+                                <h1
+                                    class="text-slate-900 dark:text-slate-50 text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                    Preserve the moments that matter, <span class="text-primary">without the
+                                        stress.</span>
+                                </h1>
+                                <p
+                                    class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed max-w-[540px]">
+                                    A simple, private website for your family's memories. No passwords, no tech
+                                    friction. Just pure storytelling.
+                                </p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button
+                                    class="flex items-center justify-center gap-3 rounded-xl h-14 px-8 bg-primary text-background-dark text-lg font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                                    <svg class="w-6 h-6" viewbox="0 0 24 24">
+                                        <path
+                                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                    <span>Start with Google</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center rounded-xl h-14 px-8 border-2 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                    Learn More
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex -space-x-3">
+                                    <div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 overflow-hidden"
+                                        data-alt="Portrait of a smiling grandmother">
+                                        <img alt="User" class="w-full h-full object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnoTUeeOJo4mNALTnO4x2Vm7-9tbLQYps3RTMmu5e56xsvhjJ9PaZtPIwgj3rDsguI1sGkwG9qkXN_ZRisnY7XQA1V9KekEjkRlJ4wDYfHewwp4VPbQCSrcikNQC-i_ewMO2GSEkCdr0ySTvEVjr5Wf8kgS3DPAXQQ5G45-ZmCaEIjMMWV79n4fIz707Ezm0bpZJsnXOQuorFpvKCJSZLZxP7mpXuoULDsYzwvZ1KvP91l9Gs7ZLsXIkqfemJ-0DagRmClRW4ab3d7" />
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 overflow-hidden"
+                                        data-alt="Portrait of a happy young father">
+                                        <img alt="User" class="w-full h-full object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB-tJ7upQzSGLbRZr6Z8AiXOHExBJjfLFiPJ-J5ruL8eyOJ-7WtvIPr6J6sw3Dr0zqpjeQbzt9lmPQD572FDhAITOKrYQl7W4NAUb7x88PoEVnUuqGQzU8SpLLd9WWSz3WlOBpOSrRhihz4LLRi_Eh_gfoGgpAC5eTDksuQcQL7-vuYDKPjIa_izyA-Z55JYIdXOuxYID8cUNmD0zDDyyJdcjPltcLoYpSW7OnJqYnbo4vCutRoPhBFO68eL9fT4psbj36zg6We6Oy" />
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-slate-200 overflow-hidden"
+                                        data-alt="Portrait of a joyful mother">
+                                        <img alt="User" class="w-full h-full object-cover"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCC8sU1dkaOLIIN2GPkSrXIz0TSGUKRkMRrIhedhw4shYX1mjstdK_5v35bLw03AxWDNlu1e_CS9Dhubq5N47YYYq578kCS62iu0IlRaWRZYW-6O1_E5U2pvE6ibm0lp8uVhf1sI4oD4_3BxxmyGp-YeMzoh-Mq4byRZgkUjxeR49azOgsKYWPqrRzEEFgEp9GcA42D999ZOcGTJrsuGJ8014TDPlLw6HLQrqfCk3kWmo6WNRC2ZQv4gp-02xkf1n3t_Ki9fU3Yne4" />
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-500">Trusted by 2,000+ families</p>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
+                                data-alt="Happy family picnic in a sunlit park">
+                                <img alt="Family memory" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVIO5LOFfqdELhJezYLajeya5yE9xuv8CTPZlsNhfOtbKmovwXnaMs0tKt_QH-eAue0EuH8639kg-WThK7cuuG204ftTsjSoVivghLqVn-oJ9Ya8UeL5PA95AsCwxmO3_H-HYFv2DAdFhOkCZOWRorAmTnja850CVKCxhfUuPBGHjvF9Bl5fPf0ULbfVuXZ1t1XWyTBOiDLoee5Uzgw3Aqg__8edsAi2AbzALiknBuEOYnqnsXw8eXKWmDoGAqh7uNwW11E4ZX0rOB" />
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 w-48 h-48 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-900 shadow-xl -rotate-6 hidden md:block"
+                                data-alt="Close up of baby's first steps">
+                                <img alt="Baby steps" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwBs4HsmVE-KpBlL8oXUNpHV9qShdpnsFXoUDU7GLRjFIzRZZcnxk6Mam97zC2TpX_7q6uBsD2oPntnNkj1t_fHbaB9dx_w8LugppwEEsJUbAJobw8YcQfXGHxfq8rUwZP7mEXptQC0vKrI5UNBMs4QLMndCSPR0sosCzJdSEwO_LynI8XYR6tWgU246C_gzJ0tGOxcS5UKGXcwPfbWlkIihmWw2wqQOdVOZuEvdgNpDBzeujMva4FG_RmOQS2GWxD6duz07gYydJw" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Features Section -->
+                <div class="px-6 md:px-20 py-20 bg-primary/5 dark:bg-primary/5">
+                    <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
+                        <div class="flex flex-col gap-4 text-center max-w-[800px] mx-auto">
+                            <h2 class="text-slate-900 dark:text-slate-50 text-3xl md:text-5xl font-bold leading-tight">
+                                Designed for simplicity</h2>
+                            <p class="text-slate-600 dark:text-slate-400 text-lg">We removed the friction so you can
+                                focus on what actually matters: your family's story.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Feature 1 -->
+                            <div
+                                class="flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:shadow-xl transition-shadow group">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-3xl">passkey</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">Sign
+                                        in with Google</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-base leading-normal">Fast
+                                        onboarding with no new passwords to remember. One click and you're in.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 2 -->
+                            <div
+                                class="flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:shadow-xl transition-shadow group">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-3xl">language</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">Your
+                                        Own Private Site</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-base leading-normal">Every family
+                                        gets a beautiful, auto-generated subdomain. Private by default, shareable by
+                                        choice.</p>
+                                </div>
+                            </div>
+                            <!-- Feature 3 -->
+                            <div
+                                class="flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-8 hover:shadow-xl transition-shadow group">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight">Simple
+                                        Organization</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-base leading-normal">Limited
+                                        choices means zero overwhelm for you and your kin. We organize, you enjoy.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gallery Section -->
+                <div class="px-6 md:px-20 py-24">
+                    <div class="max-w-[1200px] mx-auto">
+                        <div class="flex justify-between items-end mb-12">
+                            <div class="flex flex-col gap-2">
+                                <h2 class="text-slate-900 dark:text-slate-50 text-3xl font-bold tracking-tight">
+                                    Capturing every milestone</h2>
+                                <p class="text-slate-500">Beautifully stored, easily revisited.</p>
+                            </div>
+                            <a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                                See all examples <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="flex flex-col gap-4 group">
+                                <div class="w-full aspect-square bg-slate-200 rounded-2xl overflow-hidden"
+                                    data-alt="Toddler taking first steps toward parent">
+                                    <img alt="Milestone"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9aAaCBF--9sQDRXoVADG9vh_XlVjbBN_OHiD3Buzwb3QHSDt09m5qjFPQpnfR6FefWWFdJgU9KzEpXFXcv8g_XBtFR09FAs7z2tksWkQPR4n_V4wFjpUtmt0GVCD7I1pGfi5LNFaoK4ZW9Kh6JlCf8Gb4kZB76AtvfrgxlASrFDgYCGCt_1n0-KvCCn-gJtZN7t5nvG_JJzE5LM9fC4wyQBN3jVlJ_Y99UBNPG1PNLnEgPHxrTmQfWmGxb9IBtIuVVTl_K2RAdFc0" />
+                                </div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-slate-50 text-lg font-bold">Baby's First Steps
+                                    </p>
+                                    <p class="text-slate-500 text-sm">Stored securely forever</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 group">
+                                <div class="w-full aspect-square bg-slate-200 rounded-2xl overflow-hidden"
+                                    data-alt="Family running on a tropical beach at sunset">
+                                    <img alt="Milestone"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY28kqTeDsFVudqRepUZMv4gCCZ0yt4VpNm9MsLmY0UsFvSmk4X5-5iDNbzQOlPZ0UtkFwfz0JhAKRMsad3WnpKlRXpnkoPNzhXp3zyLc96E6tsYjwgjVB_Ijqvw9ayeucFXpRiVbQSTirBCguk_ItdAkv5uexwEMoH2sDKq-5NNzKa-yNHjK434E66Y_6IMgsl5dtebiEBTxJCI2xx76xqiLzcj-NgWNKb3pMekzZue9Tt9hyoLSXPGwEVaRbubO_6CMzoaaAG9ZD" />
+                                </div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-slate-50 text-lg font-bold">Summer Vacations</p>
+                                    <p class="text-slate-500 text-sm">Shared privately with relatives</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 group">
+                                <div class="w-full aspect-square bg-slate-200 rounded-2xl overflow-hidden"
+                                    data-alt="Family gathered around a dinner table for holidays">
+                                    <img alt="Milestone"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwG-A90ouhM5e8qum6S1feT23hwAUFpzDQAHFzTblnZcoI06buOoAjfot1RMi_KKJegBjn8skot9u6TVcJoJKgqdKC5q4pNvJNE6HMwStjBa5wCOsgQAH-Nh0N5lPxYEPKN1tQhJdlEixzIz5TxvSLrhAmhvLACuCNHAcD_n5e8QsPkd_zqICAglGVX_ktEIHoLpSVBpYO5sHOYw0EZVyhPp2FiSJIMq1RhX-fY2MdxHDIfEfWGvStHNe2dZwevuIafZMHN7pn7h_F" />
+                                </div>
+                                <div>
+                                    <p class="text-slate-900 dark:text-slate-50 text-lg font-bold">Holiday Traditions
+                                    </p>
+                                    <p class="text-slate-500 text-sm">Organized automatically by year</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Call to Action -->
+                <div
+                    class="px-6 md:px-20 py-20 bg-background-dark text-slate-100 rounded-[2rem] mx-6 md:mx-20 mb-20 overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/10 blur-[100px]"></div>
+                    <div class="relative z-10 max-w-[800px] mx-auto text-center flex flex-col gap-8 items-center">
+                        <h2 class="text-4xl md:text-5xl font-black leading-tight">Ready to start your family's digital
+                            heirloom?</h2>
+                        <p class="text-slate-400 text-lg md:text-xl">Join thousands of families who are preserving their
+                            history without the digital clutter.</p>
+                        <button
+                            class="flex items-center justify-center gap-3 rounded-xl h-14 px-10 bg-primary text-background-dark text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-all">
+                            <svg class="w-6 h-6" viewbox="0 0 24 24">
+                                <path
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            <span>Start with Google</span>
+                        </button>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="px-6 md:px-20 py-12 border-t border-slate-200 dark:border-slate-800">
+                <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+                    <div class="flex flex-col gap-4 col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+                            <div
+                                class="size-6 bg-primary rounded flex items-center justify-center text-background-dark">
+                                <span class="material-symbols-outlined text-sm font-bold">auto_awesome</span>
+                            </div>
+                            <h2 class="text-base font-bold leading-tight">Sweet Memories</h2>
+                        </div>
+                        <p class="text-slate-500 text-sm max-w-xs">Making family history accessible, private, and
+                            beautiful for everyone, regardless of tech skills.</p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-bold text-slate-900 dark:text-slate-100">Company</h4>
+                        <nav class="flex flex-col gap-2">
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">About Us</a>
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Careers</a>
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Privacy
+                                Policy</a>
+                        </nav>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-bold text-slate-900 dark:text-slate-100">Contact</h4>
+                        <nav class="flex flex-col gap-2">
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Support</a>
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Twitter</a>
+                            <a class="text-slate-500 hover:text-primary transition-colors text-sm"
+                                href="#">Instagram</a>
+                        </nav>
+                    </div>
+                </div>
+                <div
+                    class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-xs">
+                    © 2024 Sweet Memories. All rights reserved. Built with love for families everywhere.
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

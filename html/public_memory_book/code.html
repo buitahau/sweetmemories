@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6ee619",
+            "background-light": "#f7f8f6",
+            "background-dark": "#182111",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <!-- Navigation -->
+      <header
+        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-background-light/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="flex items-center gap-3 text-slate-900 dark:text-slate-100">
+          <div class="size-6 text-primary">
+            <span class="material-symbols-outlined text-3xl">auto_awesome</span>
+          </div>
+          <h2 class="text-xl font-bold leading-tight tracking-tight serif-title">Sweet</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8 items-center">
+          <nav class="hidden md:flex items-center gap-9">
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Timeline</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+          </nav>
+          <button
+            class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark text-sm font-bold transition-transform hover:scale-105">
+            <span>Sign In</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex flex-1 flex-col items-center">
+        <div class="w-full max-w-[1100px] px-4 md:px-10 py-8">
+          <!-- Hero Section -->
+          <div class="@container">
+            <div class="relative overflow-hidden rounded-xl md:rounded-3xl aspect-[16/9] min-h-[400px] group">
+              <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                data-alt="A beautiful baby laughing joyfully outdoors"
+                style='background-image: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvsTLxXEZECLNeD8QuHxBaNP0tdRCvtjf8YoPTlinZ8hLcLgESR8MJbwk3QopEdbEt1BtueJgVYvPuDMt93K9lsKg0KF1wlVT6fTlULpIJ47gA5NN6_2AM_HIl0_HQatdRDudarK0yEeGRssT3hv8D_5F7Car2VaiVdlonJn-anPpKS2WRDz5Lj8hXQSTVqh9DmzTqpRSZeiI7wndeQVhgFXH2dIzV4kKFBUjtu0qzj0Glp6PcZ9NkJCLGyHXFvT0E7hYFEvo2vZhy");'>
+              </div>
+              <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-16">
+                <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight serif-title italic">Anna's First
+                  Years</h1>
+                <p class="text-white/90 mt-4 text-lg max-w-xl font-light">A digital legacy of small moments and big
+                  milestones.</p>
+                <div class="mt-8 flex gap-4">
+                  <button
+                    class="bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/30 transition-all">
+                    <span class="material-symbols-outlined text-primary">favorite</span>
+                    <span class="font-semibold text-sm">Leave a Heart</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Intro text -->
+          <div class="max-w-3xl mx-auto text-center py-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 serif-title">A high-end digital photo album of Anna's journey
+            </h2>
+            <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+          </div>
+          <!-- Tab Navigation -->
+          <div class="mb-12">
+            <div class="flex border-b border-primary/10 overflow-x-auto no-scrollbar gap-8 md:justify-center">
+              <a class="flex flex-col items-center justify-center border-b-2 border-primary text-slate-900 dark:text-slate-100 pb-4 pt-4 whitespace-nowrap"
+                href="#">
+                <span class="text-sm font-bold tracking-wide">The First Month</span>
+              </a>
+              <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 pb-4 pt-4 whitespace-nowrap transition-colors"
+                href="#">
+                <span class="text-sm font-bold tracking-wide">Family Holidays</span>
+              </a>
+              <a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 pb-4 pt-4 whitespace-nowrap transition-colors"
+                href="#">
+                <span class="text-sm font-bold tracking-wide">First Steps</span>
+              </a>
+            </div>
+          </div>
+          <!-- Section: The First Month -->
+          <section class="mb-20">
+            <div class="flex justify-between items-end mb-8">
+              <div>
+                <span class="text-primary font-bold uppercase tracking-widest text-xs">Chapter One</span>
+                <h3 class="text-3xl font-bold serif-title mt-1">The First Month</h3>
+              </div>
+              <p class="text-slate-500 text-sm italic">August 2023</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+              <!-- Large Featured Card -->
+              <div
+                class="md:col-span-8 group overflow-hidden rounded-2xl bg-white dark:bg-background-dark/50 border border-primary/5 shadow-sm">
+                <div class="aspect-video bg-cover bg-center overflow-hidden"
+                  data-alt="Newborn baby sleeping peacefully in a basket"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwXUMhvey3fd2wmH4sXdAUmkkze-lyqsGMV7TdY99N-N-C4YprspwccQj-xq10GwqJZyRO1ym79uJFz7r-wgSksVidhq_ldqPijfrL_TYlLoUKvu7Fplf1bS88f962jUQYGNrH9GnvEG8Bsr-GONZ8GH7qMZbSA5YpZ-PU29f4OAUKbgu_XRfFbaOzGCjzfaMb-DHVZaVrYKOF92spkA_Nb0XGfy6G5LX8Zjd7z5sW8VI0iiI9OwRMH1bUEaABq4eLqF9TF60hpaAs");'>
+                </div>
+                <div class="p-6">
+                  <h4 class="text-xl font-bold mb-2 serif-title">Arrival Day</h4>
+                  <p class="text-slate-600 dark:text-slate-400 leading-relaxed">The day our world changed forever.
+                    Weighing 7lbs 4oz, Anna arrived on a quiet Tuesday morning. The air felt still and the light was
+                    perfect.</p>
+                </div>
+              </div>
+              <!-- Side Grid -->
+              <div class="md:col-span-4 flex flex-col gap-6">
+                <div
+                  class="group overflow-hidden rounded-2xl bg-white dark:bg-background-dark/50 border border-primary/5 shadow-sm h-full">
+                  <div class="aspect-square bg-cover bg-center" data-alt="Tiny baby feet held by parent's hands"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3Fl9YgszyOd71feWA2o1KfTJyYL43zPsdsZFfVDatnCc62N1bIdi9ACliIBVu3ieJ14gk2930gqiuvAt4U-6kxdI5GUdDmGc6szlzjTqCnghRIeq-ysIRSUqpgCbCc1LbY-NaYFkW5fXQ_276uNbYAHDtcoX6UCUe5HN9-HpCw1MdPfaOuumflbJGJ_OaTXuwYsRNWgxaAbtEZ0GZLbf4OOLhjiHSQZNSM0yHyqnRDBfQuzNdQYwsQzkWvsATlbDZSwTI53hDNqKT");'>
+                  </div>
+                  <div class="p-4">
+                    <h4 class="font-bold serif-title">Tiny Details</h4>
+                  </div>
+                </div>
+                <div
+                  class="group overflow-hidden rounded-2xl bg-white dark:bg-background-dark/50 border border-primary/5 shadow-sm h-full">
+                  <div class="aspect-square bg-cover bg-center"
+                    data-alt="Baby nursery with light streaming through window"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCO5jSZOYsXIQF9oHf_3aYjMr1PXkiakPKkqx0odQeDVTGxYfCLFwcnKE-xbGNJU_KT1qU0qDaByOZHKuuYwiCN2RWh5yqGQ7N4UOUT0K1ao4KgEpj1H1apV7F1P5NsDyJav2f55xPLPJMcUdqsU2Kd0QnDkaVOkYRdFoMP-PP09BbZ5mmwooW6al8z4demx_4c5QmsCYIAwfCj31d6UuVo5SeX4v027Gg95klMPEjrHH-BFGRNJWzk0E70Bf1y5qtUu3CIvgGQYBWD");'>
+                  </div>
+                  <div class="p-4">
+                    <h4 class="font-bold serif-title">First Night Home</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section: Family Holidays -->
+          <section class="mb-20">
+            <div class="flex justify-between items-end mb-8">
+              <div>
+                <span class="text-primary font-bold uppercase tracking-widest text-xs">Chapter Two</span>
+                <h3 class="text-3xl font-bold serif-title mt-1">Family Holidays</h3>
+              </div>
+              <p class="text-slate-500 text-sm italic">December 2023</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="rounded-xl overflow-hidden aspect-[3/4] shadow-lg group">
+                <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+                  data-alt="Baby in a holiday sweater near a Christmas tree"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWvQYLY-mAmGFm3BL8QhrwqTcBWTXICrWSS_Z3EhOLRllvDT7fn5IKVehwcHDhwClQ_b0YRm2d0U6lokkSx0lProXJbpdSWbxAHm1rAQC4217rX1U7Lf4kJNiz6Em2vsNpP8KFMLeKhfLjMcC9IGXlnoh4rHsPoZC3yFykSM1PQf_S_AZ-pO3c3KnvuI5GBuMkJh-lXbMYItuGiV3EAerC9z_zvaGWhIrRc3AEgoVYiT7qUhxRwIwJvnMhHyT_Bj66Ahsdf8bMxY-G");'>
+                </div>
+              </div>
+              <div class="rounded-xl overflow-hidden aspect-[3/4] shadow-lg group">
+                <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+                  data-alt="Family dinner scene during holiday season"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHnJheNS4GjSA4c5r6UJ_UEsCR0VTpgXhT6K8RhBZwHOquM2aHCPl1DvDqcGI6H5U1uT6ko8XFvG9wO_ykQ98IS3FY_gZwKiEjWa_SA6sXKlxl0WH9F43kKmgLRm3ET-ufzprH8sIcAgtZFehx53QHdE9MHIKUplUTOQKbVNp70Bi7COLwWWW3foE6NWRtQgC0g90YaIc0JZtXLE_3LRSv9WBuegXkMKsaLwMC0ynk4p2Gcc0X4o0bFEgvSyQtfIwhr1ewTo8v9jO6");'>
+                </div>
+              </div>
+              <div class="rounded-xl overflow-hidden aspect-[3/4] shadow-lg group">
+                <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+                  data-alt="Wrapped gifts and baby toys"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjJg1HolXm1-ltHxX_NfwV75YBqZuSiNMq0xTvyP0MxztoovrTTswLtGb_ecHCIM4_I5nyGYEJV3xnNWAMsdCRHez2kiFtb_nsVYgp3j2NGi-vro5z6_YJ3smqeIRAe-PvWVeZfiyw7vh1g5Noeg1zkNj8eFtb56HWHcVQuPtsD2hqm-jomocB8UKiTmFg9TOZMPy4SJwHQovtWF63KG_CwtVNFRtz-AHwvBdDT4o8hKuZ0MMlX95TgY0m4YgyaJwb0G1fuFWom9Zf");'>
+                </div>
+              </div>
+              <div class="rounded-xl overflow-hidden aspect-[3/4] shadow-lg group">
+                <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
+                  data-alt="Cozy winter window scene with candles"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQsxUrlnqOwxPVJI9jMVNV_aTLSmSf7Fgs8H62DxzlETr6bTbrpjEYVhP7bAaGAHWZpI_R2mALc05K86hL7C7eOchyL_FH0YIk83VJmRAM7v2fk1BzHcdpRoDKB2dblcBrzzLnva7v4yrX1m7ZsWqYIO9B9K_qWCoqVRMqKN8g03ZZMfwBxIUKcsooqPI7aMcGyqlr8hxPg6fjNXN2ihOWcTaaAG5wxhRytnDV0hO4hAfp9BFim-H81FZDDPkhSIt9gmpCOwf-VfA3");'>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section: First Steps -->
+          <section class="mb-20">
+            <div
+              class="bg-primary/5 rounded-3xl p-8 md:p-16 flex flex-col items-center text-center border border-primary/10">
+              <span class="text-primary font-bold uppercase tracking-widest text-xs mb-4">Chapter Three</span>
+              <h3 class="text-4xl font-bold serif-title mb-8">First Steps</h3>
+              <div class="max-w-2xl text-lg text-slate-700 dark:text-slate-300 italic mb-10 leading-relaxed">
+                "One small step for Anna, one giant leap for our living room carpet. Today, June 14th, she let go of the
+                coffee table and took three shaky, magnificent steps toward us."
+              </div>
+              <div class="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-cover bg-center"
+                  data-alt="Blurry motion shot of baby walking toward camera"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXLW3ta1xARElFpASE6MIkdOgnYor3f8kT-Opjm2VWzEfFDJbrhx15MLa52qGi2F2YouX4eCw-JqGpCdeXKYWBkGJ_qO3BkCXcrB4o6xZsax-XXO8sx-SNupv_kXYP2WP1Kg0I5nnrtOwvNwmR30wp4VDKP81apF4Nyrraz17vmRFkzHP0rmqA10qs936IhjMu2v7h3LSerlXhFhBp6fhFobgovgXRbkwIr2LwaGCseGC5nKysgwZp5HvuW4PuQWAxf-XirM-cxFDU");'>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer">
+                  <div
+                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110">
+                    <span class="material-symbols-outlined text-background-dark text-3xl">play_arrow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Footer Engagement -->
+          <div class="border-t border-primary/10 py-20 text-center">
+            <div class="inline-flex items-center justify-center p-4 bg-primary/20 rounded-full mb-6">
+              <span class="material-symbols-outlined text-primary text-4xl">favorite</span>
+            </div>
+            <h3 class="text-2xl font-bold serif-title mb-4">Add your love to Anna's journey</h3>
+            <p class="text-slate-500 mb-8 max-w-sm mx-auto">128 family members have already left a heart for Anna.</p>
+            <button
+              class="bg-primary hover:bg-primary/90 text-background-dark font-bold px-10 py-4 rounded-full shadow-lg shadow-primary/20 transition-all active:scale-95">
+              Leave a Heart
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer class="bg-white dark:bg-background-dark/80 py-10 px-6 border-t border-primary/5">
+        <div class="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">auto_awesome</span>
+            <span class="font-bold serif-title">Sweet Memories</span>
+          </div>
+          <div class="flex gap-8 text-sm text-slate-400">
+            <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="#">Contact</a>
+          </div>
+          <p class="text-sm text-slate-400">© 2024 Sweet. Built for generations.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

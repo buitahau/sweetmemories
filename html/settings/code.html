@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6ee619",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Sweet Memories - Settings</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Top Navigation -->
+            <header
+                class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+                <div class="flex items-center gap-4">
+                    <div class="size-8 flex items-center justify-center rounded-lg bg-primary text-background-dark">
+                        <span class="material-symbols-outlined font-bold">auto_awesome</span>
+                    </div>
+                    <h2 class="text-lg font-bold leading-tight tracking-tight">Sweet Memories</h2>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">notifications</span>
+                    </button>
+                    <button
+                        class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">account_circle</span>
+                    </button>
+                </div>
+            </header>
+            <div class="flex flex-1">
+                <!-- Sidebar -->
+                <aside
+                    class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 hidden md:flex flex-col gap-6">
+                    <div>
+                        <h3 class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Admin Panel
+                        </h3>
+                        <nav class="flex flex-col gap-1">
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined">dashboard</span>
+                                <span class="text-sm font-medium">Dashboard</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <span class="text-sm font-medium">Memories</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined">gallery_thumbnail</span>
+                                <span class="text-sm font-medium">Galleries</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined">bar_chart</span>
+                                <span class="text-sm font-medium">Analytics</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-primary"
+                                    style="font-variation-settings: 'FILL' 1">settings</span>
+                                <span class="text-sm font-medium">Settings</span>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined">forum</span>
+                                <span class="text-sm font-medium">Support</span>
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="mt-auto p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+                        <p class="text-xs text-slate-500 mb-2 leading-relaxed">You're currently on the <strong>Premium
+                                Plan</strong></p>
+                        <div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary w-3/4"></div>
+                        </div>
+                    </div>
+                </aside>
+                <!-- Main Content -->
+                <main class="flex-1 max-w-4xl mx-auto w-full p-6 md:p-10">
+                    <div class="mb-10">
+                        <h1 class="text-3xl font-bold tracking-tight mb-2">Settings</h1>
+                        <p class="text-slate-500 dark:text-slate-400">Personalize your memory site and manage how others
+                            see it.</p>
+                    </div>
+                    <div class="space-y-12">
+                        <!-- General Section -->
+                        <section
+                            class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-slate-200 dark:border-slate-800 pb-12">
+                            <div class="md:col-span-1">
+                                <h2 class="text-lg font-semibold mb-1">General Info</h2>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">This information will be displayed
+                                    on your main page.</p>
+                            </div>
+                            <div class="md:col-span-2 space-y-6">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-medium">Site Title</label>
+                                    <input
+                                        class="w-full rounded-xl border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3"
+                                        placeholder="e.g. Our Family Adventures" type="text"
+                                        value="Anna's Sweet Memories" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-medium">Short Description</label>
+                                    <textarea
+                                        class="w-full rounded-xl border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3 resize-none"
+                                        placeholder="Share a few words about what this collection means..."
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Web Address Section -->
+                        <section
+                            class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-slate-200 dark:border-slate-800 pb-12">
+                            <div class="md:col-span-1">
+                                <h2 class="text-lg font-semibold mb-1">Web Address</h2>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Choose the custom link people will
+                                    use to visit your site.</p>
+                            </div>
+                            <div class="md:col-span-2">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-medium">Subdomain</label>
+                                    <div class="flex">
+                                        <input
+                                            class="flex-1 rounded-l-xl border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-primary focus:border-primary px-4 py-3 border-r-0"
+                                            placeholder="anna" type="text" value="anna" />
+                                        <span
+                                            class="inline-flex items-center px-4 rounded-r-xl border border-l-0 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-500 text-sm">
+                                            .memories.com
+                                        </span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">info</span>
+                                        Only letters and numbers are allowed.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Privacy Section -->
+                        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
+                            <div class="md:col-span-1">
+                                <h2 class="text-lg font-semibold mb-1">Privacy</h2>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Control who can view your
+                                    beautiful memories.</p>
+                            </div>
+                            <div class="md:col-span-2 space-y-6">
+                                <div
+                                    class="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="size-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                                            <span class="material-symbols-outlined">public</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-sm">Public Site</h4>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">Anyone with the link
+                                                can view your site.</p>
+                                        </div>
+                                    </div>
+                                    <div class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" />
+                                        <div
+                                            class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="size-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500">
+                                            <span class="material-symbols-outlined">search_off</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-sm">Hide from Search</h4>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">Google and others
+                                                won't list your site.</p>
+                                        </div>
+                                    </div>
+                                    <div class="relative inline-flex items-center cursor-pointer">
+                                        <input class="sr-only peer" type="checkbox" />
+                                        <div
+                                            class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Footer Actions -->
+                    <div
+                        class="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 flex items-center justify-end gap-4">
+                        <button
+                            class="px-6 py-2.5 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            Cancel
+                        </button>
+                        <button
+                            class="px-8 py-2.5 rounded-xl text-sm font-bold bg-primary text-background-dark shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+                            Save Changes
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

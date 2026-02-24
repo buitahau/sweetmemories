@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6ee619",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Sweet Memories - Configuration</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-black/20 backdrop-blur-sm px-6 py-4 md:px-20 lg:px-40 sticky top-0 z-50">
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center justify-center size-10 rounded-lg bg-primary/20 text-primary">
+                        <span class="material-symbols-outlined text-3xl">auto_stories</span>
+                    </div>
+                    <div>
+                        <h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">
+                            Sweet Memories</h2>
+                        <p class="text-xs text-slate-500">Parent Dashboard</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:block text-right">
+                        <p class="text-sm font-medium">Sarah Jenkins</p>
+                        <p class="text-xs text-slate-500 italic">Premium Member</p>
+                    </div>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/30"
+                        data-alt="User profile picture of a smiling mother"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAZ-T8yRmrnqImhGw-m3fd_L6jFG5wUkAQLoV9fieRemGyd0BN84VEuZsAvCs-gcyIpSZ-BcuCYTdcwEQwxfX7VcG6EQorWtndZ-X2JInGazvUcaBpyiwhLkLayHpDwIWXO3pI8CYO0a_B7ZYb4kMrlSBxS7iJk_dzC0mHegPgDfQsxsWpys9XKZT8C8BraQ54BcHY5I2m1aqI4NJ04QcfChgv1NfdGg-Ld-pbDZLtSrWltbuHr6kLx6D4FmhomYlM9s3PN0W6T8OL");'>
+                    </div>
+                </div>
+            </header>
+            <main class="px-6 py-8 md:px-20 lg:px-40 flex-1">
+                <div class="max-w-[800px] mx-auto">
+                    <!-- Page Title -->
+                    <div class="mb-8">
+                        <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Template Configuration</h1>
+                        <p class="text-slate-600 dark:text-slate-400 mt-1">Customize your digital memory book with ease.
+                        </p>
+                    </div>
+                    <!-- Template & Status Section -->
+                    <section
+                        class="bg-white dark:bg-slate-900/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800 mb-6">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">style</span>
+                            Template &amp; Status
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Select
+                                    Template</span>
+                                <div class="relative">
+                                    <select
+                                        class="form-select w-full rounded-lg border-slate-200 dark:border-slate-700 bg-background-light dark:bg-background-dark py-3 pl-4 pr-10 focus:ring-primary focus:border-primary transition-all">
+                                        <option value="modern">Modern Timeline</option>
+                                        <option value="soft">Soft Gallery</option>
+                                        <option value="classic">Classic Storybook</option>
+                                        <option value="minimal">Minimal Keepsake</option>
+                                    </select>
+                                </div>
+                            </label>
+                            <div
+                                class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 h-[58px]">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-slate-400">language</span>
+                                    <span class="text-sm font-medium">Published Status</span>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input checked="" class="sr-only peer" type="checkbox" value="" />
+                                    <div
+                                        class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Hero Section Config -->
+                    <section
+                        class="bg-white dark:bg-slate-900/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800 mb-6">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">image</span>
+                            Hero Section
+                        </h3>
+                        <p class="text-sm text-slate-500 mb-4">Choose a primary hero image from your saved collections.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <button
+                                class="relative group aspect-square rounded-lg overflow-hidden border-4 border-primary ring-2 ring-primary/20">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                    data-alt="Baby smiling in a sunlit room"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLfF_NhVbatJd15r3FDeN4YdOLWu1kfXsTwTvsBWhcJdiWxYZLa76PLLr8pYYdOrmkDFEx5xxHLv8mZhjuhBmlWXseJjYBoYW1M5e0HJxpUmOPpcXMxXISFXzxDS9Y2WZ0oRrqb28cUvuEuc1N83zhzeo4oEnlarLE6ReeUibJNCuIapakWfpqyLp5luzg2AH49SCSIWm1b32EwUW25S7wG9vxx3kpuyZ2FYRFa9hM5GnlTSgRNu7nUX1S84FT0Aex2Q1SoQMJYSUH" />
+                                <div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-3xl">check_circle</span>
+                                </div>
+                            </button>
+                            <button
+                                class="relative group aspect-square rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-all">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                    data-alt="Abstract nature patterns and leaves"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD1x5BN-REz0Ktug21cL5W5JD7IBfFZinyOPhKV4oF6JzxA1rQ1js4mWZtVnul4Mo5L_mu6FUuMXpAYj5w5VmaIVdc66yqawpb5jHZer1F1JfbIrH2eXiom1HGBnMjH_H4spqrP1JvnJsC-rfxusaBDcyb0J6xqgiizPV8C9150eU6bnvZkVxlnx4_8-HNSJQFpyWDqtLu9XRHJ0hSJldVvEHEvCCmYD1c9x9TCFeEy_NgrXquvUXK2P2E07RKSa8OaP_-5Ps0Janj" />
+                            </button>
+                            <button
+                                class="relative group aspect-square rounded-lg overflow-hidden border-2 border-transparent hover:border-primary/50 transition-all">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform"
+                                    data-alt="Children playing with colorful blocks"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNAlb3KUa_X9qpoBuygQd0xMLQn2gD2Vzz1HhOMLKWIBB2MObMfOCy5_JMLHXKnVbuy6rp-4P6y_RmfuwNZ_yASzVY8vRuW3IrpUvNOxm_rp2VuXxmyQNu45_d2kHCVwmpyaGe-oWmOWGu-RXsh4iFttIcQKFjsmoQNGE-qQDw_wLc3FhCmjxhTkecGD0gHq3aikd7MPkW-Tqj81kXggvDIohL7bQozDRTwJG_IpJ0M3AhWpmJ0Z1zQ4NKog3ij_g5-CP6o3VOwfz_" />
+                            </button>
+                            <button
+                                class="aspect-square rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all">
+                                <span class="material-symbols-outlined">add_photo_alternate</span>
+                                <span class="text-xs mt-1">Upload New</span>
+                            </button>
+                        </div>
+                    </section>
+                    <!-- Description Section Config -->
+                    <section
+                        class="bg-white dark:bg-slate-900/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800 mb-6">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">auto_fix_high</span>
+                            Our Story
+                        </h3>
+                        <div class="flex flex-col gap-2">
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Main Description</span>
+                            <textarea
+                                class="form-textarea w-full rounded-lg border-slate-200 dark:border-slate-700 bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary placeholder:italic"
+                                placeholder="Tell the story of these memories..." rows="4"></textarea>
+                            <div class="flex justify-between items-center mt-1">
+                                <p class="text-xs text-slate-500 italic">Recommended length: 200-500 words.</p>
+                                <span class="text-xs text-slate-400">0 / 1000</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Gallery Section Config -->
+                    <section
+                        class="bg-white dark:bg-slate-900/50 rounded-xl p-6 border border-slate-200 dark:border-slate-800 mb-8">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">photo_library</span>
+                            Gallery Selection
+                        </h3>
+                        <div class="flex items-center justify-between mb-4">
+                            <p class="text-sm text-slate-500">Select categories to include in the gallery</p>
+                            <button class="text-primary text-sm font-semibold hover:underline">Select All</button>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label
+                                class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-primary/5 cursor-pointer transition-colors">
+                                <input checked="" class="rounded text-primary focus:ring-primary h-5 w-5"
+                                    type="checkbox" />
+                                <div class="flex flex-col">
+                                    <span class="font-medium">First Steps (24 images)</span>
+                                    <span class="text-xs text-slate-500">March - April 2024</span>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-primary/5 cursor-pointer transition-colors">
+                                <input checked="" class="rounded text-primary focus:ring-primary h-5 w-5"
+                                    type="checkbox" />
+                                <div class="flex flex-col">
+                                    <span class="font-medium">Birthday Bash (42 images)</span>
+                                    <span class="text-xs text-slate-500">May 2024</span>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-primary/5 cursor-pointer transition-colors">
+                                <input class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox" />
+                                <div class="flex flex-col">
+                                    <span class="font-medium">Summer Vacation (15 images)</span>
+                                    <span class="text-xs text-slate-500">July 2024</span>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-primary/5 cursor-pointer transition-colors">
+                                <input class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox" />
+                                <div class="flex flex-col">
+                                    <span class="font-medium">Quiet Moments (8 images)</span>
+                                    <span class="text-xs text-slate-500">Misc 2024</span>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- Footer Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-end gap-3 mb-12">
+                        <button
+                            class="w-full sm:w-auto px-8 py-3 rounded-lg border border-slate-300 dark:border-slate-700 font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            Cancel
+                        </button>
+                        <button
+                            class="w-full sm:w-auto px-8 py-3 rounded-lg bg-primary/20 text-primary-dark font-semibold hover:bg-primary/30 transition-colors flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">visibility</span>
+                            Preview
+                        </button>
+                        <button
+                            class="w-full sm:w-auto px-12 py-3 rounded-lg bg-primary text-slate-900 font-bold hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-lg">cloud_upload</span>
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </main>
+            <!-- Toast Notification (Static Example) -->
+            <div
+                class="fixed bottom-6 right-6 flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-lg shadow-2xl">
+                <span class="material-symbols-outlined text-primary">check_circle</span>
+                <span class="text-sm">Auto-saved 2 mins ago</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

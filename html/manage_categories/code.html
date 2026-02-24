@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Manage Categories - Sweet Memories</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6ee619",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="flex min-h-screen">
+        <!-- Side Navigation -->
+        <aside
+            class="w-72 bg-white dark:bg-background-dark/50 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full overflow-y-auto">
+            <div class="p-6 flex flex-col gap-8">
+                <!-- Branding -->
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-slate-900 shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined font-bold">auto_awesome</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-base font-bold leading-none tracking-tight">Sweet Memories</h1>
+                        <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Admin Dashboard</p>
+                    </div>
+                </div>
+                <!-- Navigation Links -->
+                <nav class="flex flex-col gap-2">
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">dashboard</span>
+                        <span class="text-sm font-semibold">Dashboard</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">photo_library</span>
+                        <span class="text-sm font-semibold">Memories</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/20 text-slate-900 dark:text-slate-100 transition-colors group"
+                        href="#">
+                        <span class="material-symbols-outlined text-primary font-fill">layers</span>
+                        <span class="text-sm font-bold">Categories</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">group</span>
+                        <span class="text-sm font-semibold">Shared</span>
+                    </a>
+                    <div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+                        href="#">
+                        <span
+                            class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">settings</span>
+                        <span class="text-sm font-semibold">Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <!-- Profile Mini -->
+            <div class="mt-auto p-6 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex items-center gap-3">
+                    <img class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="Admin user profile picture"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBieSEe_0IbbKoAFVbpYQ-SHWPVs-Q_wMlEX5EXw1gm5COK3vW5Z93YbnJwoA12P0yMk8SkDS2u_KvbZMjx58VhQ_5cl8eMht9GNR3ODMC18x-yPwTh2xoJpSoCK6vkE6OiQ-uQY9QLYAMmuwCAOOTv82fjDZLiIgkqzEl24aMUMv62w8_pSJGTk4Rz66xHcmOqJWvOCWryj-q8lqLkq8aagUlI2TsNhg2oEQLNp1QPZhnSBQ29GZJ9RUKskF0YqARHwgbprL1R72C" />
+                    <div class="flex flex-col overflow-hidden">
+                        <p class="text-sm font-bold truncate">Alex Morgan</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 truncate">Premium Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 ml-72 p-8">
+            <!-- Header Section -->
+            <header class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-4xl font-black tracking-tight text-slate-900 dark:text-slate-50">Manage Categories
+                    </h2>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Organize and manage your memory
+                        collections with ease</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                        <input
+                            class="pl-10 pr-4 py-2.5 bg-white dark:bg-slate-800 border-none rounded-xl w-64 focus:ring-2 focus:ring-primary shadow-sm text-sm"
+                            placeholder="Search categories..." type="text" />
+                    </div>
+                    <button
+                        class="flex items-center gap-2 bg-primary text-slate-900 px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all hover:scale-[1.02] active:scale-95">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        <span>New Category</span>
+                    </button>
+                </div>
+            </header>
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">folder</span>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Categories</p>
+                        <p class="text-2xl font-black">12</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        <span class="material-symbols-outlined">image</span>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Photos</p>
+                        <p class="text-2xl font-black">4,289</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Baby Category -->
+                <div
+                    class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4 justify-between">
+                            <button class="bg-white/90 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="material-symbols-outlined text-slate-700 text-sm">edit</span>
+                            </button>
+                            <button class="bg-red-500/90 p-2 rounded-lg hover:bg-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-white text-sm">delete</span>
+                            </button>
+                        </div>
+                        <div class="w-full h-full bg-slate-200 bg-cover bg-center"
+                            data-alt="A smiling baby playing with wooden blocks"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1Qhp41ajsjkJ2JQQcIikiuTfFK5jjWyOWOJtxv08zfwtJ2oKQ9eJjnq4wu8Ke2XYWKN4Yt8mISgck4CZrHgzC2_UMPNybfg3fgKvPm_-Q_68n6lRHcvSWoFJA1aE2tJj5ea7-PE2wami32l3ZeIOHuRrkTuI6J1tzfDaBMTNYGSc6SzLZJuroH-2ZU56f5Ytbq0eVkDygCwqLKCbU46c6CarSOroNu_RhuERL-rBlSX3GLA5oEYA2rEeFV6iYp1ADvsHSsTeyjzzr")'>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-slate-900 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight z-20 shadow-sm">
+                            Updated 2d ago</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold">Baby Memories</h3>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">image</span>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">124 Photos</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button
+                                class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold py-2 px-3 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors">View
+                                All</button>
+                            <button
+                                class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <span class="material-symbols-outlined text-sm">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- School Category -->
+                <div
+                    class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4 justify-between">
+                            <button class="bg-white/90 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="material-symbols-outlined text-slate-700 text-sm">edit</span>
+                            </button>
+                            <button class="bg-red-500/90 p-2 rounded-lg hover:bg-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-white text-sm">delete</span>
+                            </button>
+                        </div>
+                        <div class="w-full h-full bg-slate-200 bg-cover bg-center"
+                            data-alt="A school classroom with books and blackboard"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHZwxnkqBYj8D8_wCHGy2VxtfJAllFInPjDWrm_GGW6mnn5CFrAnqt4EUjHHuV25jcpRXhOFpQQBxG_MI5Kyz4vuS96bS7uNBBfYZnbDgmfazY9JmKv4NPgcFg-Nr4w2k9CXFfsBCT--zFtSgbwrnu5hmGQkFVZ3QWcezg4to4M0R9UWqXDsRMIzE-kXwVtMF4DucLYzml9NQLNA8l3OPsJgQ5QxYp2dgkJLkqTObA18mp3c67iEHTg71l7Sx51sSmsRoR8prLfdgK")'>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight z-20 shadow-sm">
+                            Updated 1w ago</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold">School Years</h3>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">image</span>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">85 Photos</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button
+                                class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold py-2 px-3 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors">View
+                                All</button>
+                            <button
+                                class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <span class="material-symbols-outlined text-sm">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vacation Category -->
+                <div
+                    class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4 justify-between">
+                            <button class="bg-white/90 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="material-symbols-outlined text-slate-700 text-sm">edit</span>
+                            </button>
+                            <button class="bg-red-500/90 p-2 rounded-lg hover:bg-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-white text-sm">delete</span>
+                            </button>
+                        </div>
+                        <div class="w-full h-full bg-slate-200 bg-cover bg-center"
+                            data-alt="A beautiful tropical beach with palm trees"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4YFtddkVuG9gHCK91TZurUTHvJ7gw1OsnCfkxkEE0lzXGfaKTAZisdJC8zaUR4PG6zWGVGTOXjloyNbzeKV1yYpI9b3lZYUOwpUMC21H4zk0jDtllmGuYnKShd4ckwFiqs5v8h5_Bg3Eafse7kPZPF3rXjLmPDWVBHHBAMiAqrnWSksun3BXIUt6_abdXBl8Q0DGyBqjbe43gNoo8iyX1uRx1wofm93Eh9D_Z3QyfpHdpP5K2k_niJRZFEHf_gx0CFiywuzkuoeFH")'>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight z-20 shadow-sm">
+                            Updated 1mo ago</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold">Summer Vacation</h3>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">image</span>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">210 Photos</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button
+                                class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold py-2 px-3 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors">View
+                                All</button>
+                            <button
+                                class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <span class="material-symbols-outlined text-sm">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wedding Category -->
+                <div
+                    class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 transition-all">
+                    <div class="h-48 overflow-hidden relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-end p-4 justify-between">
+                            <button class="bg-white/90 p-2 rounded-lg hover:bg-white transition-colors">
+                                <span class="material-symbols-outlined text-slate-700 text-sm">edit</span>
+                            </button>
+                            <button class="bg-red-500/90 p-2 rounded-lg hover:bg-red-500 transition-colors">
+                                <span class="material-symbols-outlined text-white text-sm">delete</span>
+                            </button>
+                        </div>
+                        <div class="w-full h-full bg-slate-200 bg-cover bg-center"
+                            data-alt="A elegant wedding table setup"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQ_zodGfo8bYYomWUQsVq8_hskoQwbFZtOoj0cocQZkLWhvjBM6IBLpEjMcg1sHQ-BlvlMOgeqp2b9WKZxjptehsF6SCeVNUZffHOabHiMMnsDU0LQcqrUroCFffFJeAGPy17iFOR8SKsBw3dU-1TJb7hSKy04pD-4uCbiiGKwXbyxbq6RuFPV9ADXoyerJcOqXe0S56LwgFBjA430GquJ7x44KeJoaRZkvFr0-6-Tu1gruVH8FDQhN-AQxBEodlviKNcY0zq5GDnV")'>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-slate-900 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight z-20 shadow-sm">
+                            Updated 3h ago</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold">Wedding Day</h3>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="material-symbols-outlined text-slate-400 text-sm">image</span>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">45 Photos</p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button
+                                class="flex-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold py-2 px-3 rounded-lg hover:bg-primary hover:text-slate-900 transition-colors">View
+                                All</button>
+                            <button
+                                class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600">
+                                <span class="material-symbols-outlined text-sm">more_vert</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add New Category Placeholder -->
+                <button
+                    class="group bg-slate-100/50 dark:bg-slate-800/30 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center p-8 min-h-[320px] hover:border-primary hover:bg-primary/5 transition-all">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-md text-primary group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-4xl">add</span>
+                    </div>
+                    <p class="mt-4 text-lg font-bold text-slate-600 dark:text-slate-300">Add Category</p>
+                    <p class="text-sm text-slate-400 mt-1">Create a new collection</p>
+                </button>
+            </div>
+            <!-- Footer Section -->
+            <footer
+                class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm font-medium text-slate-500 dark:text-slate-400">© 2024 Sweet Memories. All rights
+                    reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                        href="#">Help Center</a>
+                    <a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+                        href="#">Terms of Use</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
