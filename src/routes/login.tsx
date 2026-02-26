@@ -1,13 +1,26 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Link } from '@tanstack/react-router'
+import { useState } from 'react'
 import { Icon } from '../components/ui/Icon'
 import { GoogleIcon } from '../components/ui/GoogleIcon'
+import { authClient } from '../lib/auth-client'
 
 export const Route = createFileRoute('/login')({
   component: LoginPage,
 })
 
 function LoginPage() {
+  const [loading, setLoading] = useState(false)
+
+  async function handleGoogleLogin() {
+    setLoading(true)
+    await authClient.signIn.social({
+      provider: 'google',
+      callbackURL: `${window.location.origin}/admin`,
+    })
+    setLoading(false)
+  }
+
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background-light dark:bg-background-dark font-display antialiased">
       {/* Background blobs */}
@@ -63,9 +76,19 @@ function LoginPage() {
             </div>
 
             <div className="space-y-4">
-              <button className="group flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
-                <GoogleIcon className="h-5 w-5" />
-                <span className="font-semibold">Continue with Google</span>
+              <button
+                onClick={handleGoogleLogin}
+                disabled={loading}
+                className="group flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 disabled:opacity-60 disabled:cursor-not-allowed dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+              >
+                {loading ? (
+                  <span className="h-5 w-5 rounded-full border-2 border-slate-300 border-t-primary animate-spin" />
+                ) : (
+                  <GoogleIcon className="h-5 w-5" />
+                )}
+                <span className="font-semibold">
+                  {loading ? 'Redirecting…' : 'Continue with Google'}
+                </span>
               </button>
 
               <div className="relative py-4">

@@ -135,3 +135,30 @@ npm run build      # Production build (tsc + vite)
 ```
 
 > Build output: ~353 KB / 109 KB gzipped, 208 modules, ~1.6s build time.
+
+### Database Setup with Drizzle ORM
+
+#### Running Migrations
+
+1. **Generate migrations** (when you change the schema):
+   ```bash
+   npx drizzle-kit generate
+   ```
+
+2. **Run migrations**:
+   ```bash
+   npx drizzle-kit migrate
+   ```
+
+#### Apply Changes
+
+1. **Run**:
+   ```bash
+   npx drizzle-kit push
+   ```
+
+#### Schema Configuration
+
+- Schema files are located in `src/database/schema/`
+- Migration files are generated in `src/database/migrations/`
+- Configuration is in `drizzle.config.ts`
