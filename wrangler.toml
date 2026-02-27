@@ -1,0 +1,13 @@
+name = "sweetmemories-fe"
+main = "server/worker.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+CLIENT_ORIGIN = "https://sweetmemories.pages.dev"
+
+# Secrets (set via CLI, not stored here):
+# wrangler secret put DATABASE_URL
+# wrangler secret put GOOGLE_CLIENT_ID
+# wrangler secret put GOOGLE_CLIENT_SECRET
+# wrangler secret put BETTER_AUTH_SECRET
