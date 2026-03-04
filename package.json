@@ -9,6 +9,9 @@
     "dev": "vite dev --port 3000",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "wrangler deploy --dry-run",
+    "cf:dev": "wrangler dev",
     "test": "vitest run",
     "lint": "eslint",
     "format": "prettier --check .",
@@ -20,6 +23,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@cloudflare/vite-plugin": "^1.26.0",
     "@neondatabase/serverless": "^1.0.0",
     "@neondatabase/vite-plugin-postgres": "^0.5.0",
     "@tailwindcss/vite": "^4.1.18",
@@ -58,7 +62,8 @@
     "typescript": "^5.7.2",
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.5",
+    "wrangler": "^4.70.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
