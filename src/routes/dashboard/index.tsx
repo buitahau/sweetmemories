@@ -1,12 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/layout/Header'
 import { Sidebar } from '../../components/layout/Sidebar'
+import { authClient } from '../../lib/auth-client'
 
 export const Route = createFileRoute('/dashboard/')({
   component: DashboardPage,
 })
 
 function DashboardPage() {
+  const { data: session } = authClient.useSession()
+  const username = session?.user?.name || 'User'
+
   return (
     <div className="flex min-h-screen bg-background-light dark:bg-background-dark">
       <Sidebar />
@@ -16,7 +20,7 @@ function DashboardPage() {
           <div className="p-8 max-w-5xl mx-auto w-full space-y-8">
             <section>
               <div className="flex flex-col gap-2 mb-6">
-                <h2 className="text-3xl font-black tracking-tight">Welcome back!</h2>
+                <h2 className="text-3xl font-black tracking-tight">Welcome back, {username}!</h2>
                 <p className="text-slate-500">Capture and organize your most precious moments today.</p>
               </div>
               <div className="bg-white dark:bg-slate-900 rounded-xl border-2 border-dashed border-primary/30 p-12 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer">
