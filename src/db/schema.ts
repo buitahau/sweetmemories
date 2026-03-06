@@ -91,3 +91,66 @@ export const accountRelations = relations(account, ({ one }) => ({
     references: [user.id],
   }),
 }));
+
+export const catalogue = pgTable(
+  "catalogue",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    name: text("name").notNull().default("Default"),
+    description: text("description"),
+    isDefault: boolean("is_default").default(false).notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at")
+      .$onUpdate(() => /* @__PURE__ */ new Date())
+      .notNull(),
+  },
+  (table) => [index("catalogue_userId_idx").on(table.userId)],
+);
+
+export const image = pgTable(
+  "image",
+  {
+    id: text("id").primaryKey(),
+    catalogueId: text("catalogue_id")
+      .notNull()
+      .references(() => catalogue.id, { onDelete: "cascade" }),
+    userId: text("user_id")
+      .notNull()
+      .references(() => user.id, { onDelete: "cascade" }),
+    originalUrl: text("original_url").notNull(),
+    thumbnail: text("thumbnail").notNull(),
+    fileName: text("file_name").notNull(),
+    fileSize: text("file_size").notNull(),
+    mimeType: text("mime_type").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at")
+      .$onUpdate(() => /* @__PURE__ */ new Date())
+      .notNull(),
+  },
+  (table) => [
+    index("image_catalogueId_idx").on(table.catalogueId),
+    index("image_userId_idx").on(table.userId),
+  ],
+);
+
+export const catalogueRelations = relations(catalogue, ({ one, many }) => ({
+  user: one(user, {
+    fields: [catalogue.userId],
+    references: [user.id],
+  }),
+  images: many(image),
+}));
+
+export const imageRelations = relations(image, ({ one }) => ({
+  catalogue: one(catalogue, {
+    fields: [image.catalogueId],
+    references: [catalogue.id],
+  }),
+  user: one(user, {
+    fields: [image.userId],
+    references: [user.id],
+  }),
+}));

@@ -2,8 +2,9 @@ import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 import * as schema from './schema';
 import { requireEnvVar } from '#/lib/env';
+import type { NeonHttpDatabase } from 'drizzle-orm/neon-http';
 
-let db: ReturnType<typeof drizzle> | null = null;
+let db: NeonHttpDatabase<typeof schema> | null = null;
 
 export function getDb() {
   if (!db) {
@@ -13,3 +14,4 @@ export function getDb() {
   }
   return db;
 }
+
