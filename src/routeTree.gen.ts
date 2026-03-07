@@ -14,6 +14,8 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as ApiUploadRouteImport } from './routes/api/upload'
+import { Route as ApiImagesRouteImport } from './routes/api/images'
 import { Route as AdminUploadRouteImport } from './routes/admin/upload'
 import { Route as AdminTemplatesRouteImport } from './routes/admin/templates'
 import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
@@ -44,6 +46,16 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const ApiUploadRoute = ApiUploadRouteImport.update({
+  id: '/api/upload',
+  path: '/api/upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiImagesRoute = ApiImagesRouteImport.update({
+  id: '/api/images',
+  path: '/api/images',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminUploadRoute = AdminUploadRouteImport.update({
   id: '/admin/upload',
   path: '/admin/upload',
@@ -73,6 +85,8 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/templates': typeof AdminTemplatesRoute
   '/admin/upload': typeof AdminUploadRoute
+  '/api/images': typeof ApiImagesRoute
+  '/api/upload': typeof ApiUploadRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -83,6 +97,8 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/templates': typeof AdminTemplatesRoute
   '/admin/upload': typeof AdminUploadRoute
+  '/api/images': typeof ApiImagesRoute
+  '/api/upload': typeof ApiUploadRoute
   '/dashboard': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -95,6 +111,8 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/templates': typeof AdminTemplatesRoute
   '/admin/upload': typeof AdminUploadRoute
+  '/api/images': typeof ApiImagesRoute
+  '/api/upload': typeof ApiUploadRoute
   '/dashboard/': typeof DashboardIndexRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
@@ -108,6 +126,8 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/templates'
     | '/admin/upload'
+    | '/api/images'
+    | '/api/upload'
     | '/dashboard/'
     | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
@@ -118,6 +138,8 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/templates'
     | '/admin/upload'
+    | '/api/images'
+    | '/api/upload'
     | '/dashboard'
     | '/api/auth/$'
   id:
@@ -129,6 +151,8 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/templates'
     | '/admin/upload'
+    | '/api/images'
+    | '/api/upload'
     | '/dashboard/'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
@@ -141,6 +165,8 @@ export interface RootRouteChildren {
   AdminSettingsRoute: typeof AdminSettingsRoute
   AdminTemplatesRoute: typeof AdminTemplatesRoute
   AdminUploadRoute: typeof AdminUploadRoute
+  ApiImagesRoute: typeof ApiImagesRoute
+  ApiUploadRoute: typeof ApiUploadRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
@@ -180,6 +206,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/dashboard/'
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/api/upload': {
+      id: '/api/upload'
+      path: '/api/upload'
+      fullPath: '/api/upload'
+      preLoaderRoute: typeof ApiUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/images': {
+      id: '/api/images'
+      path: '/api/images'
+      fullPath: '/api/images'
+      preLoaderRoute: typeof ApiImagesRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/admin/upload': {
       id: '/admin/upload'
@@ -232,6 +272,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdminSettingsRoute: AdminSettingsRoute,
   AdminTemplatesRoute: AdminTemplatesRoute,
   AdminUploadRoute: AdminUploadRoute,
+  ApiImagesRoute: ApiImagesRoute,
+  ApiUploadRoute: ApiUploadRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport

@@ -139,11 +139,8 @@ function LandingPage() {
                   <h2 className="text-slate-900 dark:text-slate-50 text-3xl md:text-5xl font-bold leading-tight">
                     Save Little Moments in Under a Minute
                   </h2>
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                    Sign in with Google in seconds 🤍 Choose a beautiful template that feels like home. Pick the photos you love most. Share your family memory and enjoy it forever.
-                  </p>
                   <div className="flex flex-col gap-6">
-                    {['Sign in with Google in seconds', 'Choose a beautiful template', 'Pick and share your photos'].map((copy) => (
+                    {['Sign in with Google in seconds', 'Choose a beautiful template', 'Pick the photos you love most', 'Share your family memory and enjoy it forever'].map((copy) => (
                       <div key={copy} className="flex items-start gap-4">
                         <div className="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                           <span className="material-symbols-outlined text-sm font-bold">check</span>

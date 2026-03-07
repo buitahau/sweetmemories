@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from '@tanstack/react-router'
+import { authClient } from '../../lib/auth-client'
 
 interface HeaderProps {
   variant?: 'landing' | 'admin' | 'public'
 }
 
 export const Header: React.FC<HeaderProps> = ({ variant = 'landing' }) => {
+  const { data: session } = authClient.useSession()
   if (variant === 'admin') {
     return (
       <header className="h-16 border-b border-primary/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-8 flex items-center justify-between sticky top-0 z-10">
@@ -55,13 +57,23 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'landing' }) => {
             About
           </Link>
         </nav>
-        <Link to="/login">
-          <div className="size-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
-            <span className="material-symbols-outlined text-sm font-bold">
-              person
-            </span>
-          </div>
-        </Link>
+        {session?.user ? (
+          <Link to="/dashboard">
+            <div className="size-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+              <span className="material-symbols-outlined text-sm font-bold">
+                dashboard
+              </span>
+            </div>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <div className="size-8 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20">
+              <span className="material-symbols-outlined text-sm font-bold">
+                person
+              </span>
+            </div>
+          </Link>
+        )}
       </div>
     </header>
   )
